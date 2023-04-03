@@ -27,17 +27,17 @@ def main():
         submit = driver.find_element(By.XPATH, "//button[@type='submit']")
         submit.click()
 
-        time.sleep(0.5)
+        time.sleep(1)
 
         relatorios = driver.find_element(By.XPATH, "//*[@id='mat-expansion-panel-header-7']/span[1]/mat-panel-title")
         relatorios.click()
 
-        time.sleep(0.5)
+        time.sleep(1)
 
         fiscalizacao = driver.find_element(By.XPATH, "//*[@id='mat-expansion-panel-header-60']/span/mat-panel-title")
         fiscalizacao.click()
 
-        time.sleep(0.5)
+        time.sleep(1)
 
         tipoRel = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/div/div[2]/div/div/div/div/div/div[2]/div[2]/select"))
         tipoRel.select_by_value('6')
