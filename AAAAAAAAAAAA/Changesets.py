@@ -1,15 +1,13 @@
 import os
-import subprocess
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 def main():
-    driver = webdriver.Chrome('chromedriver.exe')
-    driver.get('http://nccgtfs01:8080/tfs/NotaControl/ISS%20MANAGER%20CORE/_backlogs/TaskBoard/Manager%20ISS%20V1.3%20-%20Mar%C3%A7o%202023/Manager%20ISS%20V1.3.2?_a=requirements')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver.get('http://nccgtfs01:8080/tfs/NotaControl/ISS%20ONLINE/_backlogs/TaskBoard/Online%20ISS%20Vers%C3%A3o%20-%20Abril%202023/Licita%C3%A7%C3%A3o%20Contagem%201.3?_a=requirements')
 
     driver.set_window_position(1920, 0)
     driver.maximize_window()
