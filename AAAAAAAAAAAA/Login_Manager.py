@@ -13,7 +13,7 @@ def main():
 
         driver.set_window_position(1920, 0)
         driver.maximize_window()
-        driver.implicitly_wait(1)
+        driver.implicitly_wait(30)
 
         cpfcnpj = driver.find_element(By.XPATH, "//input[@inputid='cpfcnpj']")
         cpfcnpj.send_keys('08234775170')
@@ -34,15 +34,16 @@ def main():
 
         time.sleep(1)
 
-        fiscalizacao = driver.find_element(By.XPATH, "//*[@id='mat-expansion-panel-header-60']/span/mat-panel-title")
-        fiscalizacao.click()
+        desif = driver.find_element(By.XPATH, "//*[@id='mat-expansion-panel-header-57']/span/mat-panel-title")
+        desif.click()
 
         time.sleep(1)
 
-        tipoRel = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/div/div[2]/div/div/div/div/div/div[2]/div[2]/select"))
-        tipoRel.select_by_value('6')
+        tipoRel = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-desif/div/div[2]/div/div/div/div[3]/select"))
+        tipoRel.select_by_value('2')
 
-
+        inscricaoMunicipal = driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-desif/app-declaracao-desif/div/div[2]/form/div/div/div/div[1]/div/div/input")
+        inscricaoMunicipal.send_keys('152')
 
         while True:
             time.sleep(1200)
