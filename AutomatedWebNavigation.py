@@ -1,4 +1,3 @@
-
 import os
 from abc import ABC, abstractmethod
 from selenium import webdriver
@@ -15,20 +14,23 @@ class AutomatedWebNavigation(ABC):
 
         self.webdriver.set_window_position(1920, 0)
         self.webdriver.maximize_window()
-        self.webdriver.implicitly_wait(1)
+        self.webdriver.implicitly_wait(30)
 
     def find_element(self, by: str, value: str):
         return self.webdriver.find_element(by, value)
     
+    def get(self, url: str):
+        return self.webdriver.get(url)
+    
     @abstractmethod
     def run(self, username, password):
         pass
-
-    def close(self):
-        if self.webdriver is not None:
-            self.webdriver.quit()
     
     def error(self, exception: Exception):
         os.system('cls')
         print(f'\x1b[0;31;40m {exception} \x1b[0m')
         self.close()
+
+    def close(self):
+        if self.webdriver is not None:
+            self.webdriver.quit()
