@@ -16,14 +16,31 @@ class Online(AutomatedWebNavigation):
 
     def login(self):
         try:
-
-
-            time.sleep(2)  # tempo de espera para a página carregar após o login
+            cpfcnpj = self.find_element(By.XPATH, "/html/body/form/div/div[1]/div/div/div/div/div[2]/div/div/div/div/div/div[1]/div/input")
+            cpfcnpj.send_keys(self.username)
+            
+            senha = self.find_element(By.XPATH, "//input[contains(@value, '1') and contains(@value, '-')]")
+            senha.click()
+            senha.click()
+            senha.click()
+            senha.click()
+            
+            submit = self.find_element(By.XPATH, "/html/body/form/div/div[1]/div/div/div/div/div[2]/div/div/div/div/div/div[4]/input")
+            submit.click()
         except Exception as e:
             self.error(e)
 
     def navigate_to_forum(self):
         try:
+            cae = self.find_element(By.XPATH, "/html/body/form/div[1]/div/div/div/div/div/div[2]/div/div/div/div/div/div[1]/input")
+            cae.send_keys('0800')
+            
+            pesquisarCae = self.find_element(By.XPATH, "/html/body/form/div[1]/div/div/div/div/div/div[2]/div/div/div/div/div/div[6]/a")
+            pesquisarCae.click()
+            
+            btnMenus = self.find_element(By.XPATH, "/html/body/form/div[1]/div/a")
+            btnMenus.click()
+            
             while True:
                 time.sleep(600)  # tempo de espera de 10 minutos
         except Exception as e:
