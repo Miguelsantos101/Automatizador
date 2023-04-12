@@ -3,7 +3,7 @@ from Online import Online
 from Manager import Manager
 
 
-teste = '3'
+teste = '2'
 
 if teste == '1':
     urlAVA = 'https://ava.ufms.br/login/index.php'
