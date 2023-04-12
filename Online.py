@@ -1,5 +1,6 @@
-import os
 import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from AutomatedWebNavigation import AutomatedWebNavigation
 
 class Online(AutomatedWebNavigation):
@@ -19,15 +20,11 @@ class Online(AutomatedWebNavigation):
 
             time.sleep(2)  # tempo de espera para a página carregar após o login
         except Exception as e:
-            os.system('cls')
-            print(f'\x1b[0;31;40m {e} \x1b[0m')
-            self.close()
+            self.error(e)
 
     def navigate_to_forum(self):
         try:
             while True:
                 time.sleep(600)  # tempo de espera de 10 minutos
         except Exception as e:
-            os.system('cls')
-            print(f'\x1b[0;31;40m {e} \x1b[0m')
-            self.close()
+            self.error(e)
