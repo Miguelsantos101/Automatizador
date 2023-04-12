@@ -15,7 +15,7 @@ def main():
         driver.maximize_window()
         driver.implicitly_wait(30)
 
-        cpfcnpj = driver.find_element(By.XPATH, "//input[@inputid='cpfcnpj']")
+        cpfcnpj = driver.find_element(By.XPATH, "/html/body/app-root/div/div/mat-sidenav-container/mat-sidenav-content/div/login/div/div/div/div/div[2]/div/div/div/div/div/form/div[1]/div/input")
         cpfcnpj.send_keys('08234775170')
 
         senha = driver.find_element(By.XPATH, "//span[contains(text(), '-') and contains(text(), '1')]")
@@ -34,17 +34,33 @@ def main():
 
         time.sleep(1)
 
-        desif = driver.find_element(By.XPATH, "//*[@id='mat-expansion-panel-header-57']/span/mat-panel-title")
-        desif.click()
+        fiscalizacao = driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav[1]/div/app-sidebar/div/div/mat-accordion/mat-expansion-panel[6]/div/div/mat-accordion/mat-expansion-panel[11]/mat-expansion-panel-header/span/mat-panel-title")
+        fiscalizacao.click()
 
         time.sleep(1)
 
-        tipoRel = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-desif/div/div[2]/div/div/div/div[3]/select"))
-        tipoRel.select_by_value('2')
+        tipoRel = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/div/div[2]/div/div/div/div/div/div[2]/div[2]/select"))
+        tipoRel.select_by_value('6')
 
-        inscricaoMunicipal = driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-desif/app-declaracao-desif/div/div[2]/form/div/div/div/div[1]/div/div/input")
-        inscricaoMunicipal.send_keys('152')
+        periodoIni = driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/div[1]/div/input")
+        periodoIni.send_keys('11')
+        periodoIni.send_keys('04')
+        periodoIni.send_keys('2023')
 
+        periodoFin = driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/div[3]/div/input")
+        periodoFin.send_keys('12')
+        periodoFin.send_keys('04')
+        periodoFin.send_keys('2023')
+        
+        InscricaoMunicipal = driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div[1]/div/input")
+        InscricaoMunicipal.send_keys('022')
+        
+        tipoFiscal = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div[2]/select"))
+        tipoFiscal.select_by_visible_text('Miguel dos Santos Flores')
+        
+        tipoNatureza = Select(driver.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div[3]/select"))
+        tipoNatureza.select_by_value('3')
+        
         while True:
             time.sleep(1200)
             

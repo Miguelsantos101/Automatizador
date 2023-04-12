@@ -11,14 +11,14 @@ def main():
 
     driver.set_window_position(1920, 0)
     driver.maximize_window()
-    driver.implicitly_wait(1)
+    driver.implicitly_wait(30)
     action = ActionChains(driver)
 
-    btnSaude = driver.find_element(By.XPATH, '//*[@id="btnCartao"]')
-    btnSaude.click()
+    btnAvulso = driver.find_element(By.XPATH, '//*[@id="btnAvulso"]')
+    btnAvulso.click()
     
-    cbLeasing = driver.find_element(By.ID, 'cbLeasing')
-    cbLeasing.click()
+    rbPessoaJuridica = driver.find_element(By.ID, 'rbPessoaJuridica')
+    rbPessoaJuridica.click()
 
     txtCpfCnpj = driver.find_element(By.ID, 'txtCpfCnpj')
     txtCpfCnpj.send_keys('19165564000102')     #txtCpfCnpj.send_keys('13611567000146')
