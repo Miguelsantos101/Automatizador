@@ -22,6 +22,12 @@ class AutomatedWebNavigation(ABC):
     def find_element(self, by: str, value: str):
         return self.webdriver.find_element(by, value)
     
+    def find_elements(self, by: str, value: str):
+        return self.webdriver.find_elements(by, value)
+    
+    def back(self):
+        return self.webdriver.back()
+    
     def get(self, url: str):
         return self.webdriver.get(url)
     

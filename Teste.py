@@ -1,9 +1,9 @@
 from Ava import Ava
 from Online import Online
 from Manager import Manager
+from Changesets import Changesets
 
-
-teste = '2'
+teste = '4'
 
 if teste == '1':
     urlAVA = 'https://ava.ufms.br/login/index.php'
@@ -23,3 +23,8 @@ elif teste == '3':
     passwordOnline = '1111'
     
     online = Online(urlOnline, usernameOnline, passwordOnline)
+    
+elif teste == '4':
+    urlChangeset = 'http://nccgtfs01:8080/tfs/NotaControl/ISS%20ONLINE/_backlogs/TaskBoard/Online%20ISS%20Vers%C3%A3o%20-%20Abril%202023/Licita%C3%A7%C3%A3o%20Contagem%201.3?_a=requirements'
+    
+    changesets = Changesets(urlChangeset)

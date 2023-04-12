@@ -8,7 +8,7 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "C:\\Users\\miguel.flores\\Desktop\\Automatizador\\Teste.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }
