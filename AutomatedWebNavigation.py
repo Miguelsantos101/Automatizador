@@ -12,7 +12,17 @@ class AutomatedWebNavigation(ABC):
         self.setup(url)
 
     def setup(self, url: str):
-        self.webdriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        if (self.__module__ == 'Youtube'):
+            options = webdriver.ChromeOptions() 
+            options.add_argument('--user-data-dir='+r'C:\Users\miguel.flores\AppData\Local\Google\Chrome\User Data')
+
+            os.system('taskkill /f /im chrome.exe')
+            os.system('taskkill /f /im chromedriver.exe')
+            self.webdriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
+        else:
+            self.webdriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            
+        
         self.webdriver.get(url)
 
         self.webdriver.set_window_position(1920, 0)

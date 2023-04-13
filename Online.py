@@ -12,7 +12,7 @@ class Online(AutomatedWebNavigation):
 
     def run(self):
         self.login()
-        self.navigate_to_forum()
+        self.navigate()
 
     def login(self):
         try:
@@ -30,7 +30,7 @@ class Online(AutomatedWebNavigation):
         except Exception as e:
             self.error(e)
 
-    def navigate_to_forum(self):
+    def navigate(self):
         try:
             cae = self.find_element(By.XPATH, "/html/body/form/div[1]/div/div/div/div/div/div[2]/div/div/div/div/div/div[1]/input")
             cae.send_keys('0800')

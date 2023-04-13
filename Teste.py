@@ -2,8 +2,9 @@ from Ava import Ava
 from Online import Online
 from Manager import Manager
 from Changesets import Changesets
+from Youtube import Youtube
 
-teste = '4'
+teste = '5'
 
 if teste == '1':
     urlAVA = 'https://ava.ufms.br/login/index.php'
@@ -13,7 +14,7 @@ if teste == '1':
     ava = Ava(urlAVA, usernameAVA, passwordAVA)
     
 elif teste == '2':
-    urlManager = 'http://nccgsrv07/manager/login'
+    urlManager = 'http://localhost:4200/login'
     usernameManager = '08234775170'
     passwordManager = '1111'
     
@@ -31,3 +32,7 @@ elif teste == '4':
     
     changesets = Changesets(urlChangeset)
 
+elif teste == '5':
+    urlYoutube = 'https://www.youtube.com/feed/subscriptions'
+    
+    youtube = Youtube(urlYoutube)
