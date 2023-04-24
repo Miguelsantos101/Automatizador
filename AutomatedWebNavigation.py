@@ -24,10 +24,13 @@ class AutomatedWebNavigation(ABC):
             
         
         self.webdriver.get(url)
-
         self.webdriver.set_window_position(1920, 0)
         self.webdriver.maximize_window()
-        self.webdriver.implicitly_wait(30)
+        
+        if (self.__module__ == 'Changesets'):
+            self.webdriver.implicitly_wait(5)
+        else:
+            self.webdriver.implicitly_wait(30)
 
     def find_element(self, by: str, value: str):
         return self.webdriver.find_element(by, value)
