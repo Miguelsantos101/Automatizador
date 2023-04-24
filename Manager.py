@@ -38,34 +38,27 @@ class Manager(AutomatedWebNavigation):
             relatorios = self.find_element(By.XPATH, "//*[@id='mat-expansion-panel-header-7']/span[1]/mat-panel-title")
             relatorios.click()
 
-            time.sleep(1)
+            declaracoesFechamento = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav[1]/div/app-sidebar/div/div/mat-accordion/mat-expansion-panel[6]/div/div/mat-accordion/mat-expansion-panel[7]/mat-expansion-panel-header/span/mat-panel-title")
+            declaracoesFechamento.click()
 
-            fiscalizacao = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav[1]/div/app-sidebar/div/div/mat-accordion/mat-expansion-panel[6]/div/div/mat-accordion/mat-expansion-panel[11]/mat-expansion-panel-header/span/mat-panel-title")
-            fiscalizacao.click()
+            tipoRel = Select(self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-declaracoes/div[1]/div[2]/div/div/div/div/div/div[3]/select"))
+            tipoRel.select_by_value('1')
 
-            time.sleep(1)
+            compIni = Select(self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-declaracoes/listagem-fechamento/nc-panel/fieldset/form/div[1]/div[1]/div[1]/select"))
+            compIni.select_by_value('1')
 
-            tipoRel = Select(self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/div/div[2]/div/div/div/div/div/div[2]/div[2]/select"))
-            tipoRel.select_by_value('6')
-
-            periodoIni = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/div[1]/div/input")
-            periodoIni.send_keys('11')
-            periodoIni.send_keys('04')
-            periodoIni.send_keys('2023')
-
-            periodoFin = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[1]/div[3]/div/input")
-            periodoFin.send_keys('12')
-            periodoFin.send_keys('04')
-            periodoFin.send_keys('2023')
+            campo1 = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-declaracoes/listagem-fechamento/nc-panel/fieldset/form/div[1]/div[1]/div[3]/input")
+            campo1.send_keys('2023')
             
-            InscricaoMunicipal = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div[1]/div/input")
-            InscricaoMunicipal.send_keys('022')
-            
-            tipoFiscal = Select(self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div[2]/select"))
-            tipoFiscal.select_by_visible_text('Miguel dos Santos Flores')
-            
-            tipoNatureza = Select(self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/rel-fiscalizacao/rel-de-correspondencia/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div[3]/select"))
-            tipoNatureza.select_by_value('3')
+            compFin = Select(self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-declaracoes/listagem-fechamento/nc-panel/fieldset/form/div[1]/div[2]/div[1]/select"))
+            compFin.select_by_value('4')
+
+            campo2 = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-declaracoes/listagem-fechamento/nc-panel/fieldset/form/div[1]/div[2]/div[3]/input")
+            campo2.send_keys('2023')
+
+            cae = self.find_element(By.XPATH, "/html/body/app-root/div/div[2]/mat-sidenav-container/mat-sidenav-content/div/app-declaracoes/listagem-fechamento/nc-panel/fieldset/form/div[1]/div[3]/div/input")
+            cae.send_keys('0800')
+
             while True:
                 time.sleep(600)  
         except Exception as e:
