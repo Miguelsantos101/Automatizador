@@ -10,7 +10,7 @@ from Youtube import Youtube
 # 4 = Changesets
 # 5 = Youtube
 
-teste = '2'
+teste = '5'
 
 if teste == '1':
     urlAVA = 'https://ava.ufms.br/login/index.php'

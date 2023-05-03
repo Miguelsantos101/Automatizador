@@ -14,7 +14,7 @@ class AutomatedWebNavigation(ABC):
     def setup(self, url: str):
         if (self.__module__ == 'Youtube'):
             options = webdriver.ChromeOptions() 
-            options.add_argument('--user-data-dir='+r'C:\Users\miguel.flores\AppData\Local\Google\Chrome\User Data')
+            options.add_argument('--user-data-dir=' + os.path.expanduser('~') + r'\AppData\Local\Google\Chrome\User Data')
 
             os.system('taskkill /f /im chrome.exe')
             os.system('taskkill /f /im chromedriver.exe')
