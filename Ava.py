@@ -1,6 +1,9 @@
+import os
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
 from AutomatedWebNavigation import AutomatedWebNavigation
 
 class Ava(AutomatedWebNavigation):
@@ -12,7 +15,7 @@ class Ava(AutomatedWebNavigation):
 
     def run(self):
         self.login()
-        self.navigate_to_forum()
+        self.navigate()
 
     def login(self):
         try:
@@ -25,7 +28,7 @@ class Ava(AutomatedWebNavigation):
         except Exception as e:
             self.error(e)
 
-    def navigate_to_forum(self):
+    def navigate(self):
         try:
             while True:
                 self.get('https://ava.ufms.br/course/view.php?id=38200')

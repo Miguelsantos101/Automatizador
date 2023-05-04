@@ -1,10 +1,8 @@
 import os
+import time
 from abc import ABC, abstractmethod
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.select import Select
 from webdriver_manager.chrome import ChromeDriverManager
 
 class AutomatedWebNavigation(ABC):
@@ -27,10 +25,16 @@ class AutomatedWebNavigation(ABC):
         self.webdriver.set_window_position(1920, 0)
         self.webdriver.maximize_window()
         
-        if (self.__module__ == 'Changesets'):
+        if (self.__module__ == 'Changesets' or self.__module__ == 'Youtube'):
             self.webdriver.implicitly_wait(5)
         else:
             self.webdriver.implicitly_wait(30)
+
+    @abstractmethod
+    def run(): pass
+    
+    @abstractmethod
+    def navigate(): pass
 
     def find_element(self, by: str, value: str):
         return self.webdriver.find_element(by, value)
@@ -43,11 +47,7 @@ class AutomatedWebNavigation(ABC):
     
     def get(self, url: str):
         return self.webdriver.get(url)
-    
-    @abstractmethod
-    def run(self, username, password):
-        pass
-    
+
     def error(self, exception: Exception):
         os.system('cls')
         print(f'\x1b[0;31;40m {exception} \x1b[0m')

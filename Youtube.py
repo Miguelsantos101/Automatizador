@@ -1,5 +1,9 @@
+import os
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
 from AutomatedWebNavigation import AutomatedWebNavigation
 
 class Youtube(AutomatedWebNavigation):
@@ -21,8 +25,8 @@ class Youtube(AutomatedWebNavigation):
                         self.back()
                     self.get(self.url)
                 else:
-                    self.close()
                     break
+            self.close()
 
         except Exception as e:
             self.error(e)

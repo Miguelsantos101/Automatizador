@@ -2,6 +2,8 @@ import os
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.action_chains import ActionChains
 from AutomatedWebNavigation import AutomatedWebNavigation
 
 class Changesets(AutomatedWebNavigation):
@@ -11,9 +13,9 @@ class Changesets(AutomatedWebNavigation):
         self.run()
 
     def run(self):
-        self.navigate_to_forum()
+        self.navigate()
 
-    def navigate_to_forum(self):
+    def navigate(self):
         try:
             expand_collapse_button = self.find_element(By.ID, 'expand-collapse-button')
             expand_collapse_button.click()
