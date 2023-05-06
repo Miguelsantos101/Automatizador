@@ -1,8 +1,8 @@
-from Ava import Ava
-from Online import Online
-from Manager import Manager
-from Changesets import Changesets
-from Youtube import Youtube
+from src.Ava import Ava
+from src.Online import Online
+from src.Manager import Manager
+from src.Changesets import Changesets
+from src.Youtube import Youtube
 
 # 1 = AVA
 

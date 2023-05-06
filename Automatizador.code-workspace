@@ -8,9 +8,5 @@
 	"settings": {
 		"workbench.colorTheme": "Default High Contrast",
 		"workbench.iconTheme": "material-icon-theme",
-		"liveServer.settings.multiRootWorkspaceName": "ProgWeb",
-		"json.schemas": [
-			
-		]
 	}
 }
