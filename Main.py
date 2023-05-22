@@ -19,8 +19,8 @@ main = '5'
 
 if main == '1':
     urlAVA = 'https://ava.ufms.br/login/index.php'
-    usernameAVA = 'miguel.s'
-    passwordAVA = 'miguelsantosMM26*'
+    usernameAVA = 'COLOCAR USUÁRIO DO AVA AQUI'
+    passwordAVA = 'COLOCAR SENHA DO AVA AQUI'
     
     ava = Ava(urlAVA, usernameAVA, passwordAVA)
     
