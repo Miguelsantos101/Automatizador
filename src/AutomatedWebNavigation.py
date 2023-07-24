@@ -16,9 +16,9 @@ class AutomatedWebNavigation(ABC):
 
             os.system('taskkill /f /im chrome.exe')
             os.system('taskkill /f /im chromedriver.exe')
-            self.webdriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
+            self.webdriver = webdriver.Chrome(service=Service(), chrome_options=options)
         else:
-            self.webdriver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            self.webdriver = webdriver.Chrome(service=Service())
             
         
         self.webdriver.get(url)
