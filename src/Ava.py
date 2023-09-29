@@ -38,6 +38,6 @@ class Ava(AutomatedWebNavigation):
                 self.get('https://ava.ufms.br/mod/forum/discuss.php?d=115351')
                 time.sleep(2)  # tempo de espera para a página carregar
                 self.get('https://ava.ufms.br/course/view.php?id=38200')
-                time.sleep(600)  # tempo de espera de 10 minutos
+                time.sleep(300)  # tempo de espera de 10 minutos
         except Exception as e:
             self.error(e)
